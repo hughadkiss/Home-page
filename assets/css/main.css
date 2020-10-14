@@ -1,0 +1,228 @@
+
+
+.header_web {
+    height: 800px;
+    position: relative;
+}
+
+.header_all-menu { /*Tổng menu*/
+    position: fixed;
+    display: flex;
+    z-index: 10;
+    width: 100%;
+    height: 80px;
+    background-color: transparent;
+    transition: linear .3s;
+}
+.header_all-menu.showbar { /*hiệu ứng menu kéo xuống của trang*/
+    transition: linear .3s;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+
+.header_logo { 
+    width: 20%;
+    height: 100%;
+    
+}
+
+.header_menu { /*menu*/
+    width: 80%;
+    height: 100%;
+    display: flex;
+    
+    
+}
+
+.header_menu-list { /*thẻ ul menu*/
+    display: flex;
+    list-style: none;
+    margin-left: 15rem;
+    
+}
+
+.header_menu-link {  /*nội dung menu*/
+    color: white;
+    text-decoration: none;
+    transition: 0.5s;
+}
+
+/*css menu tài khoản*/
+/*thẻ ul list tài khoản*/
+.header_acc_list { /*ul tài khoản*/
+    box-shadow: 7px 7px 10px rgba(0, 0, 0, 0.8);
+    position: absolute;
+    width: 182px;
+    margin-top: 25px;
+    padding: 0;
+    border-top: 1px solid black;
+    background-color: white;
+    list-style: none;
+    display: none;
+}
+
+.header_acc_list::before {
+    position: absolute;
+    content: "";
+    display: block;
+    width: 100%;
+    height: 30px;
+    left: 0;
+    top: -27px;
+}
+
+.header_acc_item {
+    display: block;
+    margin: 15px;
+}
+
+.header_acc_item a {
+    font-family: 'Rubik', sans-serif;
+    color: black;
+    margin: 15px;
+    
+}
+
+.link_dangnhap,
+.link_dangky {
+    text-decoration: none;
+}
+
+.header_menu-link:hover {   /*hover vào item menu*/
+    color: rgb(255, 151, 65);
+}
+
+.menu_hover-acc:hover .header_acc_list {
+    display: block;
+}
+
+.header_menu-item { /*thẻ li menu*/
+    margin: 45px 40px;
+    font-family: 'Rubik', sans-serif;
+    font-size: 15px;
+    margin-top: 20px;
+}
+
+
+.header_bg { /*bg phủ img*/
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.header_bg::before {
+    content: '';
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, .4);
+    position: absolute;
+    z-index: 6;
+}
+
+.header_sider {
+    
+    margin: 0 auto;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.slide-box {
+    width: 100%;
+    height: 500px;
+}
+
+.header_img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.header_show_left {
+    transform: translateX(0);
+    animation: transXShowLeft ease 1s;
+}
+@keyframes transXShowLeft {
+    from {transform: translateX(100%);}
+    to {transform: translateX(0%);}
+}
+.header_show_right {
+    transform: translateX(0);
+    animation: transXShowRight ease 1s;
+}
+@keyframes transXShowRight {
+    from {transform: translateX(-100%);}
+    to {transform: translateX(0%);}
+}
+
+.header_hidden_left { /*ẩn slide*/
+    transform: translateX(100%);
+    animation: transXHideLeft ease 1s;
+}
+
+@keyframes transXHideLeft {
+    from {transform: translateX(0);}
+    to {transform: translateX(-100%);}
+}
+.header_hidden_right { /*ẩn slide*/
+    transform: translateX(100%);
+    animation: transXHideRight ease 1s;
+}
+@keyframes transXHideRight {
+    from {transform: translateX(0);}
+    to {transform: translateX(100%);}
+}
+.display-none {display: none;}
+
+.btn-slides {   /*thẻ div bao 2 btn*/
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    z-index: 6;
+}
+
+.header_button-icon-pre,    /*2 btn */
+.header_button-icon-next
+{ 
+    width: 100%;
+}
+
+#header_previous,   
+#header_next {
+    font-size: 50px;
+    color: rgb(255, 255, 255);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    box-sizing: border-box;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+#header_previous {
+    padding: 6px 15px 6px 10px;
+    left: 10px;
+}
+
+#header_next {
+    padding: 6px 10px 6px 15px;
+    right: 10px;
+}
+
+#header_previous:hover,
+#header_next:hover {
+    animation: show-bgcolor 0.8s;
+    background-color: rgba(0, 0, 0, .6);
+}
+
+@keyframes show-bgcolor {
+    from {background-color: rgba(0, 0, 0, 0);}
+    to {background-color: rgba(0, 0, 0, .6);}
+}
